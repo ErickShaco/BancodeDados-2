@@ -1,12 +1,27 @@
 import AlunoController from "../controllers/index.js";
+import prompt from "prompt-sync";
+
+const input = prompt()
 
 class AlunoView{
-    static async criar(nome, email, matricula, telefone, cod_turma){
+    static async criar(){
+        const nome = input(`Digite Seu Nome: `)
+        const email = input(`Digite Seu E-mail: `)
+        const matricula = input(`Digite Sua Matricula: `)
+        const telefone = input(`Digite Seu Telefone: `)
+        const cod_turma = input(`Digite Seu Codigo de Turma: `)
+
         const aluno = await AlunoController.criar(nome, email, matricula, telefone, cod_turma);
         console.table(aluno);
     }
 
-    static async editar(nome, email, matricula, telefone, cod_turma){
+    static async editar(){
+        const nome = input(`Digite Seu Nome: `)
+        const email = input(`Digite Seu E-mail: `)
+        const matricula = input(`Digite Sua Matricula: `)
+        const telefone = input(`Digite Seu Telefone: `)
+        const cod_turma = input(`Digite Seu Codigo de Turma: `)
+
         const aluno = await AlunoController.editar(nome, email, matricula, telefone, cod_turma);
         console.table(aluno);
     }
@@ -16,7 +31,9 @@ class AlunoView{
         console.table(aluno);
     }
 
-    static async listarPorEmail(email){
+    static async listarPorEmail(){
+        const email = input(`Digite Seu E-mail: `)
+
         const aluno = await AlunoController.listarPorEmail(email);
         console.table(aluno);
     }
@@ -25,7 +42,9 @@ class AlunoView{
         await AlunoController.deletarTodos();
     }
 
-    static async deletarAluno(email){
+    static async deletarAluno(){
+        const email = input(`Digite Seu E-mail: `)
+        
         const aluno = await AlunoController.deletarAluno(email);
         console.table(aluno);
     }

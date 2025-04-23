@@ -9,7 +9,7 @@ class CriarTabelas{
             email varchar(100) not null unique,
             matricula char(5) not null,
             telefone char(11) not null, 
-            cod_turma char(3) references turma(cod_turma)
+            cod_curso char(3) references curso(cod_curso)
         )`
         await client.query(consulta);
         console.log('Table aluno criada com sucesso!')
@@ -19,19 +19,19 @@ class CriarTabelas{
         const consulta = `create table if not exists professor(
         nome varchar(100) not null,
         matricula char(5) not null unique,
-        cod_turma char(3) references turma(cod_turma)
+        cod_curso char(3) references curso(cod_curso)
         )`
         await client.query(consulta);
         console.log('Tabela de professor criada!');
     }
 
-    static async turma(){
-        const consulta = `create table if not exists turma(
-        cod_turma char(3) primary key,
-        nome_turma varchar(60) not null
+    static async curso(){
+        const consulta = `create table if not exists curso(
+        cod_curso char(3) primary key,
+        nome_curso varchar(60) not null
         )`
         await client.query(consulta);
-        console.log('Tabela turma criada com sucesso!');
+        console.log('Tabela curso criada com sucesso!');
     }
 }
 
