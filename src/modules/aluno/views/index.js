@@ -9,9 +9,9 @@ class AlunoView{
         const email = input(`Digite Seu E-mail: `)
         const matricula = input(`Digite Sua Matricula: `)
         const telefone = input(`Digite Seu Telefone: `)
-        const cod_turma = input(`Digite Seu Codigo de Turma: `)
+        const cod_curso = input(`Digite Seu Codigo de Turma: `)
 
-        const aluno = await AlunoController.criar(nome, email, matricula, telefone, cod_turma);
+        const aluno = await AlunoController.criar(nome, email, matricula, telefone, cod_curso);
         console.table(aluno);
     }
 
@@ -20,9 +20,9 @@ class AlunoView{
         const email = input(`Digite Seu E-mail: `)
         const matricula = input(`Digite Sua Matricula: `)
         const telefone = input(`Digite Seu Telefone: `)
-        const cod_turma = input(`Digite Seu Codigo de Turma: `)
+        const cod_curso = input(`Digite Seu Codigo de Turma: `)
 
-        const aluno = await AlunoController.editar(nome, email, matricula, telefone, cod_turma);
+        const aluno = await AlunoController.editar(nome, email, matricula, telefone, cod_curso);
         console.table(aluno);
     }
 

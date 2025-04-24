@@ -6,18 +6,18 @@ const input = prompt()
 
 class TurmaView{
     static async criarTurma(){
-        const cod_turma = input(`Digite o Codigo da Turma: `)
-        const nome_turma = input(`Digite o Nome da Turma: `)
+        const cod_curso = input(`Digite o Codigo da Turma: `)
+        const nome_curso = input(`Digite o Nome da Turma: `)
 
-        const turma = await TurmaController.criar(cod_turma, nome_turma);
+        const turma = await TurmaController.criar(cod_curso, nome_curso);
         console.table(turma);
     }
 
     static async editarTurma(){
-        const cod_turma = input(`Digite o Codigo da Turma: `)
-        const nome_turma = input(`Digite o Nome da Turma: `)
+        const cod_curso = input(`Digite o Codigo da Turma: `)
+        const nome_curso = input(`Digite o Nome da Turma: `)
 
-        const turma = await TurmaController.editar(cod_turma, nome_turma);
+        const turma = await TurmaController.editar(cod_curso, nome_curso);
         console.table(turma);
     }
 
@@ -27,9 +27,9 @@ class TurmaView{
     }
 
     static async listarPorCod(){
-        const cod_turma = input(`Digite o Codigo da Turma: `)
+        const cod_curso = input(`Digite o Codigo da Turma: `)
 
-        const turma = await TurmaController.listarPorCod(cod_turma);
+        const turma = await TurmaController.listarPorCod(cod_curso);
         console.table(turma);
     }
 
@@ -40,7 +40,7 @@ class TurmaView{
     static async deletarTurma(){
         const cod = input(`Digite o Codigo da Turma: `)
         
-        const turma = await TurmaController.deletarTurma(cod_turma);
+        const turma = await TurmaController.deletarTurma(cod_curso);
         console.table(turma);
     }
 

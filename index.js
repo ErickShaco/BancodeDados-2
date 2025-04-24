@@ -6,7 +6,11 @@ import CriarTabelas from "./src/config/criar_tabela.js";
 
 const input = PromptSync()
 
-// CriarTabelas();
+CriarTabelas.aluno();
+
+CriarTabelas.curso();
+
+CriarTabelas.professor();
 
 // const nome = input('Digite o nome do aluno: ');
 // const email = input('Digite o e-mail do aluno: ');
@@ -24,7 +28,7 @@ const input = PromptSync()
 
 // AlunoView.deletarTodos();
 
-TurmaView.criarTurma()
+// TurmaView.criarTurma()
 
 // TurmaView.editarTurma()
 

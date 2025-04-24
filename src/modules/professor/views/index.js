@@ -7,18 +7,18 @@ class ProfessorView{
     static async criar(){
         const nome = input(`Digite o Nome: `)
         const matricula = input(`Digite a Matricula: `)
-        const cod_turma = input(`Digite o Codigo de Turma: `)
+        const cod_curso = input(`Digite o Codigo de Turma: `)
 
-        const professor = await ProfessorController.criar(nome , matricula, cod_turma);
+        const professor = await ProfessorController.criar(nome , matricula, cod_curso);
         console.table(professor);
     }
 
     static async editar(){
         const nome = input(`Digite o nome: `)
         const matricula = input(`Digite a Matricula: `)
-        const cod_turma = input(`Digite o Codigo da Turma: `)
+        const cod_curso = input(`Digite o Codigo da Turma: `)
 
-        const turma = await TurmaController.editar(nome, matricula, cod_turma);
+        const turma = await TurmaController.editar(nome, matricula, cod_curso);
         console.table(turma);
     }
 

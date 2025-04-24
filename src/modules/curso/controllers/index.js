@@ -1,12 +1,12 @@
 import TurmaModel from "../models/index.js"
 
 class TurmaController{
-    static async criar(cod_curso, cod_curso){
+    static async criar(cod_curso, nome_curso){
         try {
-            if (!cod_curso || !cod_curso) {
+            if (!cod_curso || !nome_curso) {
                 return console.error('Todos os Campos Devem ser Preenchidos.');
             }
-            const turma = await TurmaModel.criarTurma(cod_curso, cod_curso);
+            const turma = await TurmaModel.criarTurma(cod_curso, nome_curso);
             console.log('Turma Criada com Sucesso');
             return turma;
             
@@ -16,12 +16,12 @@ class TurmaController{
         }
     }
 
-    static async editar(cod_curso, cod_curso){
+    static async editar(cod_curso, nome_curso){
         try {
-            if (!cod_curso || !cod_curso) {
+            if (!cod_curso || !nome_curso) {
                 return console.error('Todos os Campos Devem ser Preenchidos.')
             }
-            const turma = await TurmaModel.editarTurma(cod_curso, cod_curso)
+            const turma = await TurmaModel.editarTurma(cod_curso, nome_curso)
             if(turma.length === 0){
                 return console.error('turma não Encontrada')
             }
