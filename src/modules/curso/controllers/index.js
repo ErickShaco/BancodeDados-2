@@ -128,7 +128,7 @@ class TurmaController {
 
       return professores;
     } catch (error) {
-      console.log("Erro ao Listar Professores!", error.message);
+      console.error("Erro ao Listar Professores!", error.message);
     }
   }
 }

@@ -58,7 +58,7 @@ class TurmaModel {
   static async listarAlunosPorCurso(cod_curso) {
     const dados = [cod_curso];
     const consulta = `select aluno.nome, curso.nome_curso from curso
-        join aluno on curso.cod_curso = aluno.cod_curso;
+        join aluno on curso.cod_curso = aluno.cod_curso
         where aluno.cod_curso = $1;`;
     const resultado = await client.query(consulta, dados);
     return resultado.rows;
@@ -66,7 +66,7 @@ class TurmaModel {
 
   static async listarProfessoresPorCurso(cod_curso){
     const dados = [cod_curso];
-    const consulta = `select count(professor.cod_curso) as total_professor_curso from curso
+    const consulta = `select professor.nome, curso.nome_curso from curso
         join professor on curso.cod_curso = professor.cod_curso
         where professor.cod_curso = $1;`;
     const resultado = await client.query(consulta, dados);

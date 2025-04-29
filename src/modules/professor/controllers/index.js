@@ -60,14 +60,14 @@ class ProfessorController{
 
         static async listarTodos(){
             try {
-                const professores = await ProfessorModel.deletarTodos();
+                const professores = await ProfessorModel.listarTodos();
                 if(professores.length === 0){
                     return console.log('Nenhum Professor a ser exibido!');
                 }
                 console.log('Listagem de Professores:');
                 return professores;
             } catch (error) {
-                console.log('Erro ao listar Professores', error.message);
+                console.error(error);
             }
         }
 

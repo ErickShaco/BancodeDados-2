@@ -155,7 +155,8 @@ async function menuCurso() {
         TurmaView.listarProfessoresPorCurso()
         break;
       case "0":
-        console.log(`Saindo....`);
+        console.log(`Retornando....`);
+        menuPrincipal()
         break;
     }
   }
