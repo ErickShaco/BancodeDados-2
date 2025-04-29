@@ -44,7 +44,7 @@ class TurmaView {
     console.table(turma);
   }
 
-  static async totaTurmas() {
+  static async totalTurmas() {
     const total = await TurmaController.totalTurmas();
     console.table(total);
   }
