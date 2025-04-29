@@ -50,7 +50,8 @@ class TurmaView {
   }
 
   static async listarAlunosPorCurso() {
-    const alunos = await TurmaController.listarAlunosPorCurso();
+    const curso = input(`Informe o Codigo do Curso: `)
+    const alunos = await TurmaController.listarAlunosPorCurso(curso);
     console.table(alunos);
   }
 
@@ -60,7 +61,8 @@ class TurmaView {
   }
 
   static async listarProfessoresPorCurso() {
-    const professores = await TurmaController.listarProfessoresPorCurso();
+    const curso = input(`Informe o Codigo do Curso: `)
+    const professores = await TurmaController.listarProfessoresPorCurso(curso);
     console.table(professores);
   }
 }
